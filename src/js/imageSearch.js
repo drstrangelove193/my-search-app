@@ -1,5 +1,3 @@
-
-
 const imageSearchResults = document.getElementById("imageSearchResults");
 const showMoreBtn = document.getElementById("showMoreButton");
 
@@ -19,26 +17,32 @@ export const buildImageSearchResults = async (keyword, page) => {
     imageSearchResults.innerHTML = "";
   }
 
-return await fetch(`/.netlify/functions/fetch-unsplash?keyword=${keyword}&page=${page}`)
-  .then(res => res.json())
-  .then(data => {
-    return data;
-  })
-  .catch(error => console.log(error));
+  return await fetch(
+    `/.netlify/functions/fetch-unsplash?keyword=${keyword}&page=${page}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    })
+    .catch((error) => console.log(error));
 };
 
-
 export const createImageSearchResults = (results) => {
-  results.map((result) => {
-    const image = document.createElement("img");
-    image.src = result.urls.small;
+  if (results.length === 0) {
+    const statLine = document.getElementById("stats");
+    statLine.textContent = "Sorry, No results"
+  } else {
+    results.map((result) => {
+      const image = document.createElement("img");
+      image.src = result.urls.small;
 
-    const imageLink = document.createElement("a");
-    imageLink.href = result.links.html;
-    imageLink.target = "_blank";
+      const imageLink = document.createElement("a");
+      imageLink.href = result.links.html;
+      imageLink.target = "_blank";
 
-    imageLink.appendChild(image);
-    imageSearchResults.appendChild(imageLink);
-  });
-  showMoreBtn.style.display = "block";
+      imageLink.appendChild(image);
+      imageSearchResults.appendChild(imageLink);
+    });
+    showMoreBtn.style.display = "block";
+  }
 };
