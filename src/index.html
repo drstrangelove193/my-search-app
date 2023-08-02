@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/css/style.min.css">
+  <script src="./js/main.js" type="module"></script>
+  <title>SearchMe</title>
+</head>
+<body>
+  <main>
+    <h1 class="offscreen">Search Me A Wikipedia Powered Search Engine</h1>
+
+    <section class="searchEntry">
+      <h2 class="offscreen">Search Term Entry</h2>
+      <div class="logo" aria-hidden="True">
+        <span class="blue">S</span>
+        <span class="red">e</span>
+        <span class="yellow">a</span>
+        <span class="blue">r</span>
+        <span class="green">c</span>
+        <span class="red">h</span>
+        <span class="blue">M</span>
+        <span class="yellow">e</span>
+        <span class="red exclaim">!</span>
+      </div>
+
+      <form action="#" id="searchBar" class="searchBar">
+        <label for="search" class="offscreen">Enter a search term or phrase</label>
+
+        <input type="text" id="search" autocomplete="off">
+        <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
+          <i class="fas fa-times"></i></div>
+
+         <!-- adding image search button -->
+        <button id="imageSearchButton" class="button imageSearchButton" type="button" aria-label="Submit button for image Search">
+          <i class="fa-solid fa-camera-retro blue"></i>
+        </button>
+
+        <button id="searchButton" class="button searchButton" type="submit" aria-label="Submit button">
+          <i class="fas fa-search blue"></i>
+        </button>
+      </form>
+    </section>
+
+    <section class="results">
+      <h2 class="offscreen">Search Results</h2>
+      <div class="statsBar">
+        <div class="stats" id="stats" aria-live="assertive"></div>
+      </div>
+      <div class="searchResults" id="searchResults">
+        <!-- Dynamically Generated Content goes here -->
+      </div>
+    </section>
+    
+    <!-- Div for Image search Results -->
+    <div class="imageSearchResults" id="imageSearchResults"></div>
+    <button id="showMoreButton">Show more</button>
+  </main>
+
+  <footer>
+    <p><span aria-hidden="true">&lt;&lt;</span> Powered by 
+    <a href="https://www.wikipedia.org" target="_blank">Wikipedia
+    </a><a><a>&amp;<a href="http://www.unsplash.com" target="_blank">
+    Unsplash</a><span aria-hidden="true">&gt;&gt;</span></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "http-server src -p 8080"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}

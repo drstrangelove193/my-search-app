@@ -1,0 +1,42 @@
+.imageSearchResults {
+  width: 80vw;
+  margin: 100px auto 50px;
+  display: grid;
+  @include mqmax(768px) {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  @include mqmin(769px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+  @include mqmin(1440px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+  }
+}
+
+  #imageSearchResults img{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+#showMoreButton {
+  background: $logo-blue;
+  color: $background-color;
+  border: none;
+  outline: none;
+  padding: 20px 30px;
+  border-radius: 4px;
+  margin: 10px auto 100px;
+  cursor: pointer;
+  display: none;
+  font-size: 1rem;
+  transition: .15s;
+}
+
+#showMoreButton:hover {
+  background: $logo-red;
+}
